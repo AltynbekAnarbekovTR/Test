@@ -12,13 +12,13 @@ use App\Services\{
 };
 
 return [
-  TemplateEngine::class => fn () => new TemplateEngine(__DIR__ . "/../views"),
+  TemplateEngine::class => fn () => new TemplateEngine(Paths::VIEW),
   ValidatorService::class => fn () => new ValidatorService(),
   Database::class => fn () => new Database(  'mysql', [
     'host' => 'localhost',
     'port' => 3306,
     'dbname' => 'good_mood2'
-], 'root', ''),
+], 'root', 'root'),
   UserService::class => function (Container $container) {
     $db = $container->get(Database::class);
 

@@ -12,10 +12,6 @@ class Container
   private array $definitions = [];
   private array $resolved = [];
 
-  public function __construct() {
-    echo 'Container.php';
-  }
-
   public function addDefinitions(array $newDefinitions)
   {
     $this->definitions = [...$this->definitions, ...$newDefinitions];

@@ -53,7 +53,7 @@ class ReceiptService
     $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
     $newFilename = bin2hex(random_bytes(16)) . "." . $fileExtension;
 
-    $uploadPath = "/../../../storage/uploads" . "/" . $newFilename;
+    $uploadPath = Paths::STORAGE_UPLOADS . "/" . $newFilename;
 
     if (!move_uploaded_file($file['tmp_name'], $uploadPath)) {
       throw new ValidationException(['receipt' => ['Failed to upload file']]);
@@ -85,7 +85,7 @@ class ReceiptService
 
   public function read(array $receipt)
   {
-    $filePath = "/../../../storage/uploads" . '/' . $receipt['storage_filename'];
+    $filePath = Paths::STORAGE_UPLOADS . '/' . $receipt['storage_filename'];
 
     if (!file_exists($filePath)) {
       redirectTo('/');
@@ -99,7 +99,7 @@ class ReceiptService
 
   public function delete(array $receipt)
   {
-    $filePath = "/../../../storage/uploads" . "/" . $receipt['storage_filename'];
+    $filePath = Paths::STORAGE_UPLOADS . "/" . $receipt['storage_filename'];
 
     unlink($filePath);
 

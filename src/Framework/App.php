@@ -11,12 +11,10 @@ class App
 
   public function __construct(string $containerDefinitionsPath = null)
   {
-    echo 'bootstrap.php';
     $this->router = new Router();
     $this->container = new Container();
 
     if ($containerDefinitionsPath) {
-      dd($containerDefinitionsPath);
       $containerDefinitions = include $containerDefinitionsPath;
       $this->container->addDefinitions($containerDefinitions);
     }
