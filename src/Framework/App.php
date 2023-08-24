@@ -16,6 +16,7 @@ class App
     $this->container = new Container();
 
     if ($containerDefinitionsPath) {
+      dd($containerDefinitionsPath);
       $containerDefinitions = include $containerDefinitionsPath;
       $this->container->addDefinitions($containerDefinitions);
     }
