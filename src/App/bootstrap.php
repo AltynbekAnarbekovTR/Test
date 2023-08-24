@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 // if (!defined('AUTOLOADER_INITIALIZED')) {
-    require __DIR__ . '../../autoload.php';
+    require __DIR__ . '/../../autoload.php';
 // }
 
 use Framework\App;
@@ -26,7 +26,7 @@ use App\Controllers\{
   };
 dd(__DIR__ . "/../../");
 
-$app = new App(__DIR__ . "/../../" . "App/container-definitions.php");
+$app = new App(Paths::SOURCE . "App/container-definitions.php");
 
 $app->get('/', [HomeController::class, 'home'])->add(AuthRequiredMiddleware::class);
   $app->get('/about', [AboutController::class, 'about']);
