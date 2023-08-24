@@ -25,7 +25,7 @@ use App\Controllers\{
     ReceiptController
   };
 
-$app = new App(Paths::SOURCE . "App/container-definitions.php");
+$app = new App(__DIR__ . "/../../" . "App/container-definitions.php");
 
 $app->get('/', [HomeController::class, 'home'])->add(AuthRequiredMiddleware::class);
   $app->get('/about', [AboutController::class, 'about']);
