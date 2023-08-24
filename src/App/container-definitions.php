@@ -17,7 +17,7 @@ return [
   Database::class => fn () => new Database(  'mysql', [
     'host' => 'localhost',
     'port' => 3306,
-    'dbname' => 'good-mood2'
+    'dbname' => 'good_mood2'
 ], 'root', ''),
   UserService::class => function (Container $container) {
     $db = $container->get(Database::class);
