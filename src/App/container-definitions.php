@@ -18,7 +18,7 @@ return [
     'host' => 'localhost',
     'port' => 3306,
     'dbname' => 'good_mood2'
-], 'root', 'root'),
+], 'root', ''),
   UserService::class => function (Container $container) {
     $db = $container->get(Database::class);
 
