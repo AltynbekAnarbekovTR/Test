@@ -12,7 +12,7 @@ use App\Services\{
 };
 
 return [
-  TemplateEngine::class => fn () => new TemplateEngine(Paths::VIEW),
+  TemplateEngine::class => fn () => new TemplateEngine(__DIR__ . "/../views"),
   ValidatorService::class => fn () => new ValidatorService(),
   Database::class => fn () => new Database(  'mysql', [
     'host' => 'localhost',
