@@ -11,6 +11,7 @@ class App
 
   public function __construct(string $containerDefinitionsPath = null)
   {
+    echo 'bootstrap.php';
     $this->router = new Router();
     $this->container = new Container();
 
