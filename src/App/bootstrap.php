@@ -24,7 +24,6 @@ use App\Controllers\{
     TransactionController,
     ReceiptController
   };
-dd(__DIR__ . "/../../");
 
 $app = new App(Paths::SOURCE . "App/container-definitions.php");
 
