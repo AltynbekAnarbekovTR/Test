@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 // if (!defined('AUTOLOADER_INITIALIZED')) {
-    require_once dirname(__DIR__) . '../../autoload.php';
+    require_once '../../autoload.php';
 // }
 
 use Framework\App;
