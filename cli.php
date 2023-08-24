@@ -8,7 +8,7 @@ $db = new Database('mysql', [
   'host' => 'localhost',
   'port' => 3306,
   'dbname' => 'good_mood2'
-], 'root', '');
+], 'root', 'root');
 
 $sqlFile = file_get_contents("./database.sql");
 
