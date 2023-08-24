@@ -16,6 +16,10 @@ $classmap = [
 
 spl_autoload_register(
     function (string $classname) use ($classmap) {
+        echo 'classname:';
+        dd($classname);
+        echo 'classmap';
+        dd($classmap);
         $classname_parts = explode('\\', $classname);
         $classfile = array_pop($classname_parts) . '.php';
         $namespace = implode(DIRECTORY_SEPARATOR, $classname_parts);
