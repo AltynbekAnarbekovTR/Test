@@ -23,6 +23,8 @@ spl_autoload_register(
         $namespace = implode(DIRECTORY_SEPARATOR, $classname_parts);
         echo 'classfile:';
         dd($classfile);
+        echo 'namespace:';
+        dd($namespace);
         if (!array_key_exists($namespace, $classmap)) {
             return;
         }
