@@ -4,14 +4,14 @@ define('AUTOLOADER_INITIALIZED', '1');
 
 $classmap = [
     'Framework' => __DIR__ . '/src/Framework',
-    'Framework\Rules' => __DIR__ . '/src/Framework/Rules',
-    'Framework\Exceptions' => __DIR__ . '/src/Framework/Exceptions',
-    'Framework\Contracts' => __DIR__ . '/src/Framework/Contracts',
-    'App\Controllers' => __DIR__ . '/src/App/Controllers',
-    'App/Config' => __DIR__ . '/src/App/Config',
-    'App\Middleware' => __DIR__ . '/src/App/Middleware',
-    'App\Services' => __DIR__ . '/src/App/Services',
-    'App\Exceptions' => __DIR__ . '/src/App/Exceptions'
+    'Framework'.DIRECTORY_SEPARATOR.'Rules' => __DIR__ . '/src/Framework/Rules',
+    'Framework'.DIRECTORY_SEPARATOR.'Exceptions' => __DIR__ . '/src/Framework/Exceptions',
+    'Framework'.DIRECTORY_SEPARATOR.'Contracts' => __DIR__ . '/src/Framework/Contracts',
+    'App'.DIRECTORY_SEPARATOR.'Controllers' => __DIR__ . '/src/App/Controllers',
+    'App'.DIRECTORY_SEPARATOR.'Config' => __DIR__ . '/src/App/Config',
+    'App'.DIRECTORY_SEPARATOR.'Middleware' => __DIR__ . '/src/App/Middleware',
+    'App'.DIRECTORY_SEPARATOR.'Services' => __DIR__ . '/src/App/Services',
+    'App'.DIRECTORY_SEPARATOR.'Exceptions' => __DIR__ . '/src/App/Exceptions'
 ];
 
 spl_autoload_register(
