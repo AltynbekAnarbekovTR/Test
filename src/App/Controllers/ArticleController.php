@@ -27,7 +27,7 @@ class ArticleController
 
     $this->articleService->create($_POST);
 
-//    redirectTo('/');
+    redirectTo('/');
   }
 
   public function editView(array $params)

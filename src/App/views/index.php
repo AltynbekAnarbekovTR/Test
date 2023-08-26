@@ -201,64 +201,17 @@ include $this->resolve("partials/_header.php"); ?>
     </div>
   </form>
       <div class="latest__articles cols--3--2--2">
-        <div class="column card">
-          <a
-            href="https://www.positive.news/lifestyle/how-to-live-longer-eight-habits-that-could-add-years-to-your-life/"
-            class="card__image__link"
-          >
-              <?php echo __DIR__ ?>
-            <img
-              src="<?php echo 'D:/xampp/htdocs/Good-mood-2-parent/Change-transaction-to-article/storage/uploads/'.'CodaTasks.JPG'; ?>"
-              class="card__image main__article--img img100"
-              alt="Image for How to live longer: eight habits that could add years to your life"
-            />
-          </a>
-
-          <div class="card__content">
-            <a
-              href="https://www.positive.news/lifestyle/how-to-live-longer-eight-habits-that-could-add-years-to-your-life/"
-              class="card__title h3"
-              >How to live longer: eight habits that could add years to your
-              life</a
-            >
-            <span class="card__text">
-              These lifestyle habits could extend your life by decades,
-              according to new research. Even doing a few could help
-            </span>
-            <a
-              href="https://www.positive.news/category/lifestyle/body-mind/"
-              class="card__category"
-              >Body &amp; Mind</a
-            >
-            <a
-              href="https://www.positive.news/category/lifestyle/health/"
-              class="card__category"
-              >Health</a
-            >
-            <a
-              href="https://www.positive.news/category/lifestyle/"
-              class="card__category"
-              >Lifestyle</a
-            >
-            <a
-              href="https://www.positive.news/category/lifestyle/wellbeing/"
-              class="card__category"
-              >Wellbeing</a
-            >
-          </div>
-        </div>
         <?php foreach ($articles as $article) : ?>
           <div class="column card">
           <a
             href="https://www.positive.news/lifestyle/how-to-live-longer-eight-habits-that-could-add-years-to-your-life/"
-            class="card__image__link"
-              <?php echo dd(__DIR__); ?>
-              <?php echo 'Hi'; ?>
-            <img
-              src="<?php echo __DIR__; ?>"
-              class="card__image main__article--img img100"
-              alt="Image for How to live longer: eight habits that could add years to your life"
-            />
+            class="card__image__link">
+            <?php $bom =$article['b64image'];
+            echo "<img
+          src='data:image/png;base64,$bom'
+              class='card__image main__article--img img100'
+              alt='Image for How to live longer: eight habits that could add years to your life'
+            />" ?>
           </a>
 
           <div class="card__content">

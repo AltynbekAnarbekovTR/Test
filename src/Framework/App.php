@@ -11,8 +11,6 @@ class App
 
   public function __construct(string $containerDefinitionsPath = null)
   {
-      dd('$containerDefinitionsPath:');
-      dd($containerDefinitionsPath);
     $this->router = new Router();
     $this->container = new Container();
 

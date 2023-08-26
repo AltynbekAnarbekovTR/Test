@@ -37,7 +37,6 @@ class ReceiptController
     }
 
     $receiptFile = $_FILES['receipt'] ?? null;
-      dd($receiptFile);
       die();
     $this->receiptService->validateFile($receiptFile);
 
