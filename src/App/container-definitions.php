@@ -7,9 +7,10 @@ use App\Config\Paths;
 use App\Services\{
   ValidatorService,
   UserService,
-  TransactionService,
+  ArticleService,
   ReceiptService
 };
+
 
 return [
   TemplateEngine::class => fn () => new TemplateEngine(Paths::VIEW),
@@ -24,10 +25,10 @@ return [
 
     return new UserService($db);
   },
-  TransactionService::class => function (Container $container) {
+  ArticleService::class => function (Container $container) {
     $db = $container->get(Database::class);
 
-    return new TransactionService($db);
+    return new ArticleService($db);
   },
   ReceiptService::class => function (Container $container) {
     $db = $container->get(Database::class);

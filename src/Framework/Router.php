@@ -56,9 +56,7 @@ class Router
 
       [$class, $function] = $route['controller'];
 
-      $controllerInstance = $container ?
-        $container->resolve($class) :
-        new $class;
+      $controllerInstance = $container ? $container->resolve($class) : new $class;
 
       $action = fn () => $controllerInstance->{$function}($params);
 

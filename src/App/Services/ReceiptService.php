@@ -48,7 +48,7 @@ class ReceiptService
     }
   }
 
-  public function upload(array $file, int $transaction)
+  public function upload(array $file, int $article)
   {
     $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
     $newFilename = bin2hex(random_bytes(16)) . "." . $fileExtension;
@@ -61,11 +61,11 @@ class ReceiptService
 
     $this->db->query(
       "INSERT INTO receipts(
-        transaction_id, original_filename, storage_filename, media_type
+        article_id, original_filename, storage_filename, media_type
       )
-      VALUES(:transaction_id, :original_filename, :storage_filename, :media_type)",
+      VALUES(:article_id, :original_filename, :storage_filename, :media_type)",
       [
-        'transaction_id' => $transaction,
+        'article_id' => $article,
         'original_filename' => $file['name'],
         'storage_filename' => $newFilename,
         'media_type' => $file['type']

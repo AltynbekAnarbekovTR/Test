@@ -55,12 +55,11 @@ class ValidatorService
     ]);
   }
 
-  public function validateTransaction(array $formData)
+  public function validateArticle(array $formData)
   {
     $this->validator->validate($formData, [
-      'description' => ['required', 'lengthMax:255'],
-      'amount' => ['required', 'numeric'],
-      'date' => ['required', 'dateFormat:Y-m-d']
+      'title' => ['required'],
+      'description' => ['required', 'lengthMax:255']
     ]);
   }
 }

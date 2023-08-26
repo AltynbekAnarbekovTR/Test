@@ -11,11 +11,10 @@ CREATE TABLE IF NOT EXISTS users(
   UNIQUE KEY(email)
 );
 
-CREATE TABLE IF NOT EXISTS transactions(
+CREATE TABLE IF NOT EXISTS article(
   id bigint(20) NOT NULL AUTO_INCREMENT,
   description varchar(255) NOT NULL,
-  amount decimal(10,2) NOT NULL,
-  date datetime NOT NULL,
+  article_text varchar(255) NOT NULL,
   created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   updated_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   user_id bigint(20) unsigned NOT NULL,
@@ -30,5 +29,5 @@ CREATE TABLE IF NOT EXISTS receipts(
   media_type varchar(255) NOT NULL,
   transaction_id bigint(20) NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY(transaction_id) REFERENCES transactions (id) ON DELETE CASCADE
+  FOREIGN KEY(transaction_id) REFERENCES articles (id) ON DELETE CASCADE
 );

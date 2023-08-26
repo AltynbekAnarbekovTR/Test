@@ -5,22 +5,22 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Framework\TemplateEngine;
-use App\Services\{TransactionService, ReceiptService};
+use App\Services\{ArticleService, ReceiptService};
 
 class ReceiptController
 {
   public function __construct(
     private TemplateEngine $view,
-    private TransactionService $transactionService,
+    private ArticleService $articleService,
     private ReceiptService $receiptService
   ) {
   }
 
   public function uploadView(array $params)
   {
-    $transaction = $this->transactionService->getUserTransaction($params['transaction']);
+    $article = $this->articleService->getUserArticle($params['article']);
 
-    if (!$transaction) {
+    if (!$article) {
       redirectTo("/");
     }
 
@@ -29,28 +29,30 @@ class ReceiptController
 
   public function upload(array $params)
   {
-    $transaction = $this->transactionService->getUserTransaction($params['transaction']);
 
-    if (!$transaction) {
+    $article = $this->articleService->getUserArticle($params['article']);
+
+    if (!$article) {
       redirectTo("/");
     }
 
     $receiptFile = $_FILES['receipt'] ?? null;
-
+      dd($receiptFile);
+      die();
     $this->receiptService->validateFile($receiptFile);
 
-    $this->receiptService->upload($receiptFile, $transaction['id']);
+    $this->receiptService->upload($receiptFile, $article['id']);
 
     redirectTo("/");
   }
 
   public function download(array $params)
   {
-    $transaction = $this->transactionService->getUserTransaction(
-      $params['transaction']
+    $article = $this->articleService->getUserArticle(
+      $params['article']
     );
 
-    if (empty($transaction)) {
+    if (empty($article)) {
       redirectTo('/');
     }
 
@@ -60,7 +62,7 @@ class ReceiptController
       redirectTo('/');
     }
 
-    if ($receipt['transaction_id'] !== $transaction['id']) {
+    if ($receipt['article_id'] !== $article['id']) {
       redirectTo('/');
     }
 
@@ -69,11 +71,11 @@ class ReceiptController
 
   public function delete(array $params)
   {
-    $transaction = $this->transactionService->getUserTransaction(
-      $params['transaction']
+    $article = $this->articleService->getUserArticle(
+      $params['article']
     );
 
-    if (empty($transaction)) {
+    if (empty($article)) {
       redirectTo('/');
     }
 
@@ -83,7 +85,7 @@ class ReceiptController
       redirectTo('/');
     }
 
-    if ($receipt['transaction_id'] !== $transaction['id']) {
+    if ($receipt['article_id'] !== $article['id']) {
       redirectTo('/');
     }
 

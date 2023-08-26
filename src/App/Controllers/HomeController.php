@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Config\Paths;
 use Framework\TemplateEngine;
-use App\Services\TransactionService;
+use App\Services\ArticleService;
 
 class HomeController
 {
   public function __construct(
     private TemplateEngine $view,
-    private TransactionService $transactionService
+    private ArticleService $articleService
   ) {
   }
 
@@ -23,7 +24,7 @@ class HomeController
     $offset = ($page - 1) * $length;
     $searchTerm = $_GET['s'] ?? null;
 
-    [$transactions, $count] = $this->transactionService->getUserTransactions(
+    [$articles, $count] = $this->articleService->getUserArticles(
       $length,
       $offset
     );
@@ -38,9 +39,11 @@ class HomeController
       ]),
       $pages
     );
-
+echo Paths::STORAGE_UPLOADS . '/';
+dd(''.__DIR__);
     echo $this->view->render("index.php", [
-      'transactions' => $transactions,
+      'articles' => $articles,
+      'previews' => Paths::STORAGE_UPLOADS . '/',
       'currentPage' => $page,
       'previousPageQuery' => http_build_query([
         'p' => $page - 1,
