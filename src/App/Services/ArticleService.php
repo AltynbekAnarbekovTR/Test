@@ -24,9 +24,9 @@ class ArticleService
 
         $uploadPath = Paths::STORAGE_UPLOADS . "/" . $newFilename;
 
-        if (!move_uploaded_file($receiptFile['tmp_name'], $uploadPath)) {
-            throw new ValidationException(['receipt' => ['Failed to upload file']]);
-        }
+//        if (!move_uploaded_file($receiptFile['tmp_name'], $uploadPath)) {
+//            throw new ValidationException(['receipt' => ['Failed to upload file']]);
+//        }
 
         $this->db->query(
             "INSERT INTO articles(user_id, title, description, article_text,original_filename, storage_filename, media_type)

@@ -28,12 +28,8 @@ class ValidatorService
 
     $this->validator->add('required', new RequiredRule());
     $this->validator->add('email', new EmailRule());
-    $this->validator->add('min', new MinRule());
-    $this->validator->add('in', new InRule());
-    $this->validator->add('url', new UrlRule());
     $this->validator->add('match', new MatchRule());
     $this->validator->add('lengthMax', new LengthMaxRule());
-    $this->validator->add('numeric', new NumericRule());
     $this->validator->add('dateFormat', new DateFormatRule());
     $this->validator->add('password', new PasswordRule());
   }
