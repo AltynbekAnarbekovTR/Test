@@ -6,6 +6,8 @@ declare(strict_types=1);
     require __DIR__ . '/../../autoload.php';
  }
 
+
+
 use Framework\App;
 use App\Config\Paths;
 use App\Middleware\{TemplateDataMiddleware,

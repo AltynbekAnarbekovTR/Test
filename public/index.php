@@ -6,7 +6,6 @@ if (file_exists('../.env')) {
         require __DIR__ . '/../src/App/functions.php';
     };
 }
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 

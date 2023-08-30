@@ -11,7 +11,8 @@ $classmap = [
     'App'.DIRECTORY_SEPARATOR.'Config' => __DIR__ . '/src/App/Config',
     'App'.DIRECTORY_SEPARATOR.'Middleware' => __DIR__ . '/src/App/Middleware',
     'App'.DIRECTORY_SEPARATOR.'Services' => __DIR__ . '/src/App/Services',
-    'App'.DIRECTORY_SEPARATOR.'Exceptions' => __DIR__ . '/src/App/Exceptions'
+    'App'.DIRECTORY_SEPARATOR.'Exceptions' => __DIR__ . '/src/App/Exceptions',
+//    'PHPMailer\PHPMailer\\' => __DIR__ . '/lib/PHPMailer/Exceptions'
 ];
 
 spl_autoload_register(

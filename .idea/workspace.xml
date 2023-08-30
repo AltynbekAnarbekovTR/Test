@@ -20,11 +20,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/App/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/App" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\Good-mood-2-parent\Change-transaction-to-article\src\App" />
+      <recent name="D:\xampp\htdocs\Good-mood-2-parent\Change-transaction-to-article\lib" />
       <recent name="D:\xampp\htdocs\Good mood 2 parent\Change transaction to article phpiggy-section-17\src\App\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\Good-mood-2-parent\Change-transaction-to-article\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,7 +43,8 @@
       <updated>1692902293250</updated>
       <workItem from="1692902335036" duration="4251000" />
       <workItem from="1692952277799" duration="23889000" />
-      <workItem from="1693047732856" duration="3491000" />
+      <workItem from="1693047732856" duration="9679000" />
+      <workItem from="1693286830602" duration="1594000" />
     </task>
     <servers />
   </component>
